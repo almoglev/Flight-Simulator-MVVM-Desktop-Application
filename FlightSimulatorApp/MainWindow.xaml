@@ -1,0 +1,55 @@
+﻿<Window x:Class="FlightSimulatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp"
+        xmlns:view="clr-namespace:FlightSimulatorApp.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="483" Width="1100">
+    <Grid Background="#FFB8B7B9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label 
+               HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+               BorderBrush="#FFB8B7B9" BorderThickness="1"
+               Grid.Row="0" Grid.ColumnSpan="3"/>
+
+        <Label 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               BorderBrush="#FFB8B7B9" BorderThickness="1"
+               Grid.Row="1" Grid.Column="1"/>
+
+        <Label  
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               BorderBrush="#FFB8B7B9" BorderThickness="1"
+               Grid.Row="2" Grid.Column="1" Height="200" Width="280"/>
+
+        <Label 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               BorderBrush="#FFB8B7B9" BorderThickness="1"
+               Grid.Column="0" Grid.RowSpan="2" />
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Height="200" Width="280">
+            <view:Dashboard x:Name="myDashBoard"></view:Dashboard>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2" Grid.Column="1" Height="200" Width="280">
+            <view:ControlBoard x:Name="myControlBoard"></view:ControlBoard>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="28">
+            <view:Connect x:Name="myConnect"></view:Connect>
+        </Viewbox>
+
+        <view:Map x:Name="myMap" Grid.Column="0" Grid.Row ="1" Grid.RowSpan="2" Height="420"/>
+    </Grid>
+</Window>
