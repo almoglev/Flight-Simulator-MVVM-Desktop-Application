@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.ControlBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View"
+             xmlns:joy="clr-namespace:FlightSimulatorApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="650">
+    <Grid>
+        <joy:Joystick x:Name="joystick" Rudder="{Binding VM_Rudder, Mode=OneWayToSource , UpdateSourceTrigger=PropertyChanged}" Elevator="{Binding VM_Elevator , Mode=OneWayToSource , UpdateSourceTrigger=PropertyChanged}"></joy:Joystick>
+        <Label x:Name="RudderLabel" Content="&lt;--Rudder--&gt;" HorizontalAlignment="Center" Margin="172,29,219.6,0" VerticalAlignment="Top" Height="53" Width="258" FontFamily="Calibri" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="ElevatorLabel" Content="&lt;--Elevator--&gt;" HorizontalAlignment="Center" Margin="401,212,2.6,0" VerticalAlignment="Top" Height="58" Width="246" FontFamily="Calibri" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.316"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Slider x:Name="ThrottleSlider" Maximum="1" Minimum="0" HorizontalAlignment="Left" Margin="-22,233,0,0" VerticalAlignment="Top" Height="35" RenderTransformOrigin="0.5,0.5" Width="240" BorderThickness="0" MouseMove="ThrottleSlider_MouseMove">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.694"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider x:Name="AileronSlider" Maximum="1" Minimum="-1" HorizontalAlignment="Left" Margin="190,445,0,0" VerticalAlignment="Top" Height="35" RenderTransformOrigin="0.5,0.5" Width="240" MouseMove="AileronSlider_MouseMove">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180.228"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Label x:Name="ThrottleLabel" Content="Throttle" HorizontalAlignment="Center" Margin="-77,242,487.6,0" VerticalAlignment="Top" Height="54" Width="239" FontFamily="Calibri" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.076"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="AileronLabel" Content="Aileron" HorizontalAlignment="Center" Margin="190,478,201.6,0" VerticalAlignment="Top" Height="49" Width="258" FontFamily="Calibri" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="RudderVal" Content="{Binding ElementName=joystick, Path=Rudder, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="406,29,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
+        <Label x:Name="AileronVal" Content="0" HorizontalAlignment="Left" Margin="406,478,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
+        <Label x:Name="ElevVal" Content="{Binding ElementName=joystick, Path=Elevator, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="506,360,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
+        <Label x:Name="ThrotVal" Content="0" HorizontalAlignment="Left" Margin="6,360,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
+    </Grid>
+</UserControl>

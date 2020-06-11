@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.Dashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="650">
+    <Grid>
+        <Label x:Name="heading" Content="Heading" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="altimeterAltitude" Content="Altimeter Altitude" HorizontalAlignment="Left" Margin="29,392,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="internalPitch" Content="Internal Pitch" HorizontalAlignment="Left" Margin="29,334,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold" />
+        <Label x:Name="internalRoll" Content="Internal Roll" HorizontalAlignment="Left" Margin="29,278,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="gpsAltitude" Content="GPS Altitude" HorizontalAlignment="Left" Margin="29,224,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="airSpeed" Content="Air Speed" HorizontalAlignment="Left" Margin="29,168,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="groundSpeed" Content="Ground Speed" HorizontalAlignment="Left" Margin="29,112,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="verticalSpeed" Content="Vertical Speed" HorizontalAlignment="Left" Margin="29,64,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296" FontWeight="Bold"/>
+        <Label x:Name="headingVal" Content="{Binding VM_Heading}" HorizontalAlignment="Left" Margin="347,10,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="altimeterAltitudeVal" Content="{Binding VM_Altitude}" HorizontalAlignment="Left" Margin="347,392,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="internalPitchVal" Content="{Binding VM_Pitch}" HorizontalAlignment="Left" Margin="347,334,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="internalRollVal" Content="{Binding VM_Roll}" HorizontalAlignment="Left" Margin="347,278,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="gpsAltitudeVal" Content="{Binding VM_GPSAltitude}" HorizontalAlignment="Left" Margin="347,224,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="airSpeedVal" Content="{Binding VM_AirSpeed}" HorizontalAlignment="Left" Margin="347,168,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="groundSpeedVal" Content="{Binding VM_GroundSpeed}" HorizontalAlignment="Left" Margin="347,112,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+        <Label x:Name="verticalSpeedVal" Content="{Binding VM_VerticalSpeed}" HorizontalAlignment="Left" Margin="347,64,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="34" Width="296"/>
+    </Grid>
+</UserControl>
